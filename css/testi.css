@@ -1,0 +1,115 @@
+.container-test {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slinder-warpper {
+  position: relative;
+}
+
+.slinder-warpper .image-list {
+  display: grid;
+  gap: 18px;
+  font-size: 0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  grid-template-columns: repeat(10, 1fr);
+  scroll-behavior: smooth;
+}
+
+.slinder-warpper .image-list::-webkit-scrollbar {
+  display: none;
+}
+
+.slinder-warpper .image-list .image-item {
+  width: 450px;
+  height: 900px;
+  object-fit: cover;
+}
+
+/* Styling Tombol Chevron */
+.material-icons {
+  font-size: 36px;
+  color: #333;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.material-icons:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.chevron-left {
+  left: 10px;
+}
+
+.chevron-right {
+  right: 10px;
+}
+
+/* Styling Scrollbar */
+.slinder-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slinder-scrollbar .scrollbar-track {
+  height: 2px;
+  width: 100%;
+  background: #ccc;
+  position: relative;
+  border-radius: 4px;
+}
+
+.slinder-scrollbar:hover .scrollbar-track {
+  height: 4px;
+}
+
+.slinder-scrollbar .scrollbar-thumb {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: #000;
+  border-radius: inherit;
+  cursor: grab;
+}
+
+.slinder-scrollbar .scrollbar-track:active {
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+
+.slinder-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .slinder-warpper .image-list {
+    grid-template-columns: repeat(9, 2fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .slinder-warpper .image-list {
+    grid-template-columns: repeat(9, 2fr);
+  }
+}
